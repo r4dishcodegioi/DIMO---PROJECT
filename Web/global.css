@@ -47,7 +47,6 @@ html, body {
 
 .header-main{
     width: 100%; /* Chiếm toàn bộ chiều rộng của header */
-    max-width: 1600px; /* Đảm bảo chiều rộng không vượt quá 1800px */
     height: 60px;
     justify-content: space-between;
     display: flex;
@@ -359,9 +358,6 @@ div.hero-maincontent{
     left:50%;
     transform: translate(-50%, -55.5%);
     overflow: hidden;
-    width: 1062px;
-    max-width: 100vh;
-    height: 707px;
 }
 
 .slider{
