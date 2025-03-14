@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+
+html, body {
+    width: 1920px;
+    height: 1080px;
+    background: #252525;
+    margin:0;
+}
+
+.main{
+    position: relative; /* Đảm bảo có thể sử dụng top */
+    top: -122px;
+}
+
+/* .header .fixed {
+    position: fixed;
+    transform: translateX(-50%);
+    width: 1800px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    border: 3px solid rgba(176, 176, 176, 0.32);
+    background: linear-gradient(92deg, rgba(95, 95, 95, 0.80) 0%, rgba(122, 122, 122, 0.20) 100%);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.header{
+    position: relative; /* Mặc định giữ nguyên */
+    padding: 24px 100px;
+    border-radius: 40px;
+    border: 3px solid rgba(176, 176, 176, 0.32);
+    background: linear-gradient(92deg, rgba(95, 95, 95, 0.80) 0%, rgba(122, 122, 122, 0.20) 100%);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+    transition: all 0.3s ease-in-out; /* Hiệu ứng mượt */
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    width: 1800px;
+}
+
+.header-main{
+    width: 100%; /* Chiếm toàn bộ chiều rộng của header */
+    max-width: 1600px; /* Đảm bảo chiều rộng không vượt quá 1800px */
+    height: 60px;
+    justify-content: space-between;
+    display: flex;
+    align-self: stretch;
+}
+
+
+.nav li a{
+    text-decoration: none;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    font-family: "Archivo",sans-serif;
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    flex: 1 0 0;
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex: 1 0 0;
+}
+
+.logo-container{
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.logo{
+    width: 32px;
+    height: 48px;
+    aspect-ratio: 2/3;
+}
+
+.nav li{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    list-style: none;
+    justify-items: center;
+}
+
+.nav-btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 60px;
+    width: 501px;
+    padding: 0px 0px;
+}
+
+.btn-login{
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #f6f6f6;
+    background: transparent;
+    border: none;
+    font-family: "Archivo";
+    font-size: 24px;
+    padding: 12px 32px;
+}
+
+.btn-register{
+    justify-content: center;
+    align-items: center;
+    font-family: "Archivo";
+    border-radius: 16px;
+    border: 1.6px solid var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    background-color: transparent;
+    color: #f6f6f6;
+    padding: 12px 32px;
+    width: 156px;
+    height: 60px;
+}
+
+.btn-install{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    border: none;
+    padding: 12px 32px;
+    width: 175px ;
+}
+
+.hero-main{
+    position: relative;
+    max-width: 1920px;
+    width: 1920px;
+    max-height: 866px;
+}
+
+.hero-bg{
+    width: 1920px;
+    height: 866px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-canvas{
+    position: relative;
+    z-index: 0;
+}
+
+.gradient-bg{
+    position:absolute;
+    opacity: 0.4;
+    background: radial-gradient(100% 100% at 50.01% 100%, #F6F6F6 0%, rgba(255, 252, 67, 0.60) 26.4%, rgba(184, 182, 57, 0.40) 43.9%, rgba(90, 89, 5, 0.00) 76.4%);
+    width: 1920px;
+    height: 1070px;
+    flex-shrink: 0;
+    rotate:180deg;
+    transform: translate(0,5%);
+}
+
+.transparent-canvas{
+    position: absolute;
+    width: 1920px;
+    height: 866px;
+    transform: translate(0,0);
+}
+
+.net-vector{
+    width: 1920px;
+    height: 860px;
+    flex-shrink: 0;
+    stroke-width: 1.5px;
+    stroke: rgba(246, 246, 246, 0.60);
+    opacity: 0.6;
+    position: relative;
+    z-index: 1;
+    top: 55px;
+}
+
+
+.transparent-bg{
+    width: 1920px;
+    height: 395px;
+    background: linear-gradient(180deg, rgba(37, 37, 37, 0.00) 40.4%, #252525 89.9%);
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+}
+
+div.hero-maincontent{
+    max-height: 866px;
+    max-width: 1920px;
+    padding: 200px 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    transform: translate(0,-99.5%);
+}
+
+.hero-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 40px;
+    height: 466px;
+}
+
+.hero-title .title{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Unbounded";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 67.2px */
+    margin: 0px 0px;
+}
+
+.br{
+    color: var(--accent-semantic-warn-300-golden-fizz-fffc-43, #FFFC43);
+    font-family: "Unbounded";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+}
+
+.hero-title{
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-title .subtitle{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;/* 36px */
+    margin: 0px 0px; 
+}
+
+.hero-login{
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 16px;
+    border: 1.6px solid var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Unbounded";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+    background-color: transparent;
+}
+
+.hero-btn{
+    width: 1920px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-getstarted{
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 16px;
+    background: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    color: var(--primary-neutral-950-raisin-black-252525, #252525);
+    font-family: "Unbounded";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+    border: none;
+}
+
+.arrow-vector{
+    width: 28px;
+    height: 28px;
+    aspect-ratio: 1/1;
+}
+
+.product-mockup{
+    align-items: center;
+}
+
+.bg-canvas{
+    max-width: 1920px;
+    max-height: 100%;
+    height: 1053px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 120px 120px 0px 0px;
+    background: var(--primary-neutral-950-raisin-black-252525, #252525);
+    position: relative;
+}
+
+.yellow-vector{
+    width: 1964px;
+    height: 880px;
+    flex-shrink: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.mac-body{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-slider{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -55.5%);
+    overflow: hidden;
+    width: 1062px;
+    max-width: 100vh;
+    height: 707px;
+}
+
+.slider{
+    width: 1062px;
+    max-width: 100vh;
+    height: 707px;
+    margin: auto;
+    position: relative;
+}
+
+.list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: 1s;
+}
+
+.list img{
+    width:1062px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.buttons{
+    position: absolute;
+    top:47%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 252, 67, 0.4);
+    color: black;
+    border:none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #FFFC43;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #FFFC43;
+    border-radius: 20px;
+    margin: 20px;
+    transition: 1s;
+}
+
+.dots li.active{
+    width: 30px;
+}
+
+.dimo-tech{
+    position: relative;
+    display: flex;
+    max-width: 1920px ;
+    max-height: 578px ;
+    padding: 200px 100px 120px 100px;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dimo-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dimo-content .title .ai-powered{
+    color: var(--accent-semantic-warn-300-golden-fizz-fffc-43, #FFFC43);
+    font-family: "Unbounded";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 67.2px */
+}
+
+.dimo-content .title{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Unbounded";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    width: 725px;
+    margin: 0;
+}
+
+.dimo-content .subtitle{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 36px */
+    width: 995px;
+    max-width: 996px;
+    margin:0;
+}
+
+.hand-net{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
