@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&family=Unbounded:wght@200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.body{
+    overflow:hidden;
+}
+
+body {
+align-items: center;
+background-color: #242424;
+color: #fff;
+font-family: Archivo;
+}
+
+.container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px;
+width: 900px;
+margin-top: 40px;
+align-items: flex-start;
+height: 680px;
+}
+
+.gallery1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-items: center;
+border-radius: 8px;
+width: 249px;
+height: 122px;
+align-items: flex-start;
+}
+
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    width: 273px;
+    height: 200px;
+    padding: 12px; /* Thêm padding */
+    border-radius: 20px;
+    gap: 3px;
+    background: linear-gradient(92deg, rgba(95, 95, 95, 0.80) 18.14%, rgba(122, 122, 122, 0.20) 81.86%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: var(--glass-morphism-stroke-2, rgba(176, 176, 176, 0.32));
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
+    border-width: 2px;
+}
+
+.card1 .inner-container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 252, 52, 0.72) 0%, rgba(122, 122, 122, 0.2) 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Căn giữa và xoay */
+    transition: all 0.1s linear;
+}
+
+.card1:hover .inner-container {
+    animation: in 0.2s linear forwards;
+}
+
+.card1:not(:hover) .inner-container {
+    animation: out 0.2s linear forwards;
+}
+
+
+.thumbnail {
+    width: 100%;
+    height: 122px; /* Đảm bảo chiều cao ảnh */
+    object-fit: cover;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.title {
+    color: #f6f6f6;
+    font-family: 'Archivo', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 120%;
+    margin-top: 8px;
+    overflow: hidden; /* Đảm bảo nội dung bị cắt nếu quá dài */
+    white-space: nowrap; /* Ngăn không cho nội dung xuống dòng */
+    text-overflow: ellipsis; /* Thêm "..." nếu nội dung quá dài */
+    z-index:0 ;
+}
+
+.date {
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 100%;
+    color: rgba(255, 255, 255, 0.8); /* Màu xám nhẹ cho ngày tháng */
+    z-index:0 ;
+
+}
+
+/* Unique styles for each cursor type */
+.card1:hover {
+    box-shadow: 0 5px 10px #f6f6f6;
+}
+
+.right-slidebar {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 510px;
+  align-items: flex-start;
+}
+
+.title2 {
+  padding: 0.25rem 1rem;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.import-video {
+    padding: 10px; /* Combined padding properties */
+    margin-top: 24px;
+    width: 430px; /* Retain full width */
+    height: 480px; /* Fixed height */
+    font-size: 1.25rem;
+    font-style: italic; 
+    line-height: 0.75rem; 
+    text-align: center;
+    border: 2px solid var(--glass-morphism-stroke-2, rgba(176, 176, 176, 0.80)); /* Combined border properties */
+    border-radius: 32px;
+    backdrop-filter: blur(20px);
+    background: linear-gradient(92deg, rgba(95, 95, 95, 0.80) 18.14%, rgba(122, 122, 122, 0.20) 81.86%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.import-video .inner-container2{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 252, 52, 0.72) 0%, rgba(122, 122, 122, 0.2) 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Căn giữa và xoay */
+    transition: all 0.1s linear;
+}
+
+.import-video:hover .inner-container2 {
+    animation: in-importvideo 0.2s linear forwards;
+}
+
+.import-video:not(:hover) .inner-container2 {
+    animation: out-importvideo 0.2s linear forwards;
+}
+
+.upload-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.file-types {
+  font-style: italic;
+  color: #f6f6f6;
+}
+
+.import-btn {
+  padding: 1rem 2rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: #F6F6F6;
+  border-radius: 1.5rem;
+  border: 1.6px solid var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+  text-align: center;
+}
+
+.import-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #F6F6F6;
+  }
+
+.camera-connect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+
+.camera-connect p {
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 120%;
+  margin-top: 40px;
+}
+
+.camera-buttons {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  text-align: center;
+}
+
+.camera-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(92deg, rgba(95, 95, 95, 0.80) 18.14%, rgba(122, 122, 122, 0.20) 81.86%);
+  border: 2px solid rgba(176, 176, 176, 0.80);
+  backdrop-filter: blur(20px);
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 150%;
+  overflow: hidden;
+  position: relative;
+}
+
+.camera-btn .inner-container3{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 252, 52, 0.72) 0%, rgba(122, 122, 122, 0.2) 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: translate(-50%, -50%) rotate(-45deg); /* Căn giữa và xoay */
+    transition: all 0.1s linear;
+}
+
+.camera-btn:hover .inner-container3 {
+    animation: in-importvideo 0.2s linear forwards;
+}
+
+.camera-btn:not(:hover) .inner-container3 {
+    animation: out-importvideo 0.2s linear forwards;
+}
+
+.camera-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.next-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 1.25rem;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f6f6f6;
+    background-color: transparent;
+    border-radius: 1.5rem;
+    border: 1.6px solid var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    transition: all 0.3s linear;
+  }
+  
+  .next-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #F6F6F6;
+  }
+  
+
+/* Animations */
+@keyframes in {
+    0% {
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -40%) rotate(190deg); /* Giữ căn giữa khi xoay */
+        opacity: 1;
+    }
+}
+
+@keyframes out {
+    0% {
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -40%) rotate(190deg);
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes in-importvideo {
+    0% {
+        width: 250%;
+        height: 250%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        width: 250%;
+        height: 250%;
+        transform: translate(-50%, -40%) rotate(-140deg); /* Giữ căn giữa khi xoay */
+        opacity: 1;
+    }
+}
+
+@keyframes out-importvideo {
+    0% {
+        width: 250%;
+        height: 250%;
+        transform: translate(-50%, -40%) rotate(-140deg);
+        opacity: 1;
+    }
+    100% {
+        width: 250%;
+        height: 250%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 0;
+    }
+}
