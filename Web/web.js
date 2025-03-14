@@ -61,13 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (scrollY > 50) {
             if (!header.classList.contains("fixed")) {
-                console.log("🔵 Thêm class .fixed vào header");
-                header.classList.add("fixed");
+                console.log("🔵 Thêm class fixed vào header");
+                header.classList.add("fixed"); // Đúng: Không có dấu chấm
             }
         } else {
             if (header.classList.contains("fixed")) {
-                console.log("🔴 Xóa class .fixed khỏi header");
-                header.classList.remove("fixed");
+                console.log("🔴 Xóa class fixed khỏi header");
+                header.classList.remove("fixed"); // Đúng: Không có dấu chấm
             }
         }
     });
