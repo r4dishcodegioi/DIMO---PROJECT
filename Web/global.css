@@ -479,11 +479,12 @@ div.hero-maincontent{
 }
 
 .feature{
-    display: flex;
     padding: 120px 100px;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .key-features{
@@ -494,7 +495,7 @@ div.hero-maincontent{
     font-style: normal;
     font-weight: 900;
     line-height: 120%;
-    margin: auto; /* 67.2px */
+    margin: 0 auto;
 }
 
 .key-features .span{
@@ -507,10 +508,15 @@ div.hero-maincontent{
 }
 
 .keys{
+    /* background-color: red; */
     display: grid;
     grid-template-columns: repeat(5,1fr);
     align-items: center;
     gap: 20px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .key-card{
@@ -524,7 +530,7 @@ div.hero-maincontent{
     border: 2px solid var(--glass-morphism-stroke-2, rgba(176, 176, 176, 0.32));
     background: var(--glass-morphism-1, linear-gradient(92deg, rgba(95, 95, 95, 0.80) 18.14%, rgba(122, 122, 122, 0.20) 81.86%));
     backdrop-filter: blur(20px);
-    height: 100%;
+    height: auto;
 }
 
 .key-card1{
@@ -537,7 +543,7 @@ div.hero-maincontent{
     border-radius: 32px;
     border: 2px solid var(--stroke-1, rgba(176, 176, 176, 0.32));
     backdrop-filter: blur(20px);
-    height: 100%;
+    height: auto;
 }
 
 .card-content{
@@ -621,15 +627,16 @@ div.hero-maincontent{
 .suitable{
     display: flex;
     width: 100%;
-    padding: 80px 100px;
+    padding: 80px;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     gap: 40px;
     border-radius: 32px;
     border: 3px solid var(--glass-morphism-stroke-2, rgba(176, 176, 176, 0.32));
     background: var(--glass-morphism-1, linear-gradient(92deg, rgba(95, 95, 95, 0.80) 18.14%, rgba(122, 122, 122, 0.20) 81.86%));
     backdrop-filter: blur(20px);
     overflow: hidden;
+    width: auto;
 }
 
 .suitable h2{
@@ -653,7 +660,7 @@ div.hero-maincontent{
     line-height: 120%;
 }
 
-.suitable-for{
+.suitableFor{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -662,7 +669,31 @@ div.hero-maincontent{
     overflow: hidden;
 }
 
-.suitable-for .top {
+.suitableFor[data-animated=true]{
+    overflow: hidden;
+}
+
+.suitableFor[data-animated=true] .top-inner{
+    flex-wrap: nowrap;
+    animation: slide1 20s linear infinite var(--_animation-direction, reverse);
+    width: max-content;
+}
+
+.suitableFor[data-animated=true] .bottom-inner{
+    flex-wrap: nowrap;
+    animation: slide1 20s linear infinite var(--_animation-direction, forwards);
+    width: max-content;
+}
+
+.suitableFor[data-animated="true"] .top-inner:hover {
+    animation-play-state: paused;
+}
+
+.suitableFor[data-animated="true"] .bottom-inner:hover {
+    animation-play-state: paused;
+}
+
+.suitableFor .top{
     display: flex;
     align-items: center;
     gap: 20px;
@@ -675,24 +706,18 @@ div.hero-maincontent{
     white-space: nowrap; /* Chữ không bị xuống dòng */
 }
 
-.suitable-for .bottom {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
-    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
-    font-family: "Archivo";
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 120%;
-    white-space: nowrap; /* Chữ không bị xuống dòng */
-}
 
-.suitable-for .top p{
+
+.suitableFor .top p{
     margin: 0;
 }
 
-.suitable-for .bottom p{
-    margin: 0;
-}
+
+@keyframes slide1 {
+    to{
+        transform: translate(calc(-50% - 10px));
+    }
+  }
+
+
+

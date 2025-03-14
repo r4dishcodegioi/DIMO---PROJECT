@@ -45,31 +45,31 @@ dots.forEach((li,key) => {
     })
 })
 
-document.addEventListener("DOMContentLoaded", function () {
-    let header = document.querySelector('.header');
+const scrollers = document.querySelectorAll('.suitableFor')
+if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    addAnimation();
+}
 
-    if (!header) {
-        console.error("❌ Không tìm thấy .header! Kiểm tra lại class trong HTML.");
-        return;
-    }
+function addAnimation(){
+    scrollers.forEach((suitableFor) => {
+        suitableFor.setAttribute("data-animated",true);
 
-    console.log("✅ Script đã tải xong. Đang theo dõi sự kiện scroll...");
+         const scrollerInner = suitableFor.querySelector('.top-inner');
+         const scrollerContent = Array.from(scrollerInner.children);
 
-    window.addEventListener("scroll", function () {
-        let scrollY = window.scrollY;
-        console.log("📌 Scroll Position:", scrollY); // Kiểm tra giá trị cuộn
+         scrollerContent.forEach(item => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute('aria-hidden', true);
+            scrollerInner.appendChild(duplicatedItem);
+         })
 
-        if (scrollY > 50) {
-            if (!header.classList.contains("fixed")) {
-                console.log("🔵 Thêm class fixed vào header");
-                header.classList.add("fixed"); // Đúng: Không có dấu chấm
-            }
-        } else {
-            if (header.classList.contains("fixed")) {
-                console.log("🔴 Xóa class fixed khỏi header");
-                header.classList.remove("fixed"); // Đúng: Không có dấu chấm
-            }
-        }
-    });
-});
+         const scrollerInner1 = suitableFor.querySelector('.bottom-inner');
+         const scrollerContent1 = Array.from(scrollerInner1.children);
 
+         scrollerContent1.forEach(item => {
+            const duplicatedItem1 = item.cloneNode(true);
+            duplicatedItem1.setAttribute('aria-hidden1', true);
+            scrollerInner1.appendChild(duplicatedItem1);
+         })
+    })
+}
