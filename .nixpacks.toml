@@ -1,4 +1,6 @@
 [build]
-  # Không cần ngôn ngữ đặc biệt vì bạn chỉ sử dụng HTML/CSS
   builder = "static"
-  command = "echo 'No build step required for pure HTML/CSS'"
+  command = "echo 'No build step required for basic HTML/CSS/JS'"
+
+[deployment]
+  server = "static"
