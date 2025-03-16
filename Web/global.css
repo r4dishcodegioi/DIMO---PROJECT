@@ -893,7 +893,7 @@ div.hero-maincontent{
     margin: 0;
 }
 
-.choose-plan{
+.choose-plan {
     display: flex;
     padding: 12px 32px;
     justify-content: center;
@@ -901,23 +901,36 @@ div.hero-maincontent{
     gap: 16px;
     border-radius: 16px;
     background: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.choose-plan p{
+.choose-plan p {
     color: var(--primary-neutral-950-raisin-black-252525, #252525);
-    /* button/display xl */
     font-family: "Unbounded";
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%; /* 36px */
+    line-height: 150%;
     margin: 0;
+    transition: opacity 0.3s ease;
 }
 
-.choose-arrow{
+.choose-plan .choose-arrow {
     width: 28px;
     height: 28px;
     aspect-ratio: 1/1;
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.choose-plan:hover .choose-arrow {
+    transform: translate(-355%, 0); /* Di chuyển icon vào giữa */
+    opacity: 1; /* Hiển thị icon khi hover */
+}
+
+.choose-plan:hover p {
+    opacity: 0; /* Làm chữ biến mất khi hover */
 }
 
 .subcription-canvas{
