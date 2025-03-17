@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <link rel="stylesheet" href="css/register_verify.css">
+    <script defer src="js/verify.js"></script>
+</head>
+<body>
+    <div class="verify-page">
+        <div class="verify-main">
+            <div class="verify-account">
+                <img src="assets/logo_circle.svg" alt="Dimo Circle" class="dimo-logo">
+                <h1>Verification</h1>
+            </div>
+            <div class="verify-form">
+                <div class="verify-content">
+                    <div class="verify-title">
+                        <h2>Verify your account</h2>
+                        <p>
+                            We’ve send a 6-digit code to <span>thynmse182596@fpt.edu.vn</span> <br>
+                            Please enter the code to complete your account setup.
+                        </p>
+                    </div>
+                    <div class="verify-cell">
+                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                    </div>
+                    <button id="verifyBtn" disabled>Verify</button>
+                    <div class="resend-code">
+                        <p>Haven’t received a code?</p>
+                        <p class="a">Resend in <span>5</span> seconds</p>
+                    </div>
+                </div>
+            </div>
+        <img src="assets/login_bg.svg" alt="Login BG" class="login-bg">
+</body>
+</html>

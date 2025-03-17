@@ -893,7 +893,7 @@ div.hero-maincontent{
     margin: 0;
 }
 
-.choose-plan {
+.choose-plan{
     display: flex;
     padding: 12px 32px;
     justify-content: center;
@@ -901,36 +901,47 @@ div.hero-maincontent{
     gap: 16px;
     border-radius: 16px;
     background: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
-    position: relative;
-    transition: all 0.3s ease;
 }
 
-.choose-plan p {
+.choose-plan p{
     color: var(--primary-neutral-950-raisin-black-252525, #252525);
+    /* button/display xl */
     font-family: "Unbounded";
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%;
+    line-height: 150%; /* 36px */
     margin: 0;
-    transition: opacity 0.3s ease;
+}
+
+.choose-arrow{
+    width: 28px;
+    height: 28px;
+    aspect-ratio: 1/1;
 }
 
 .choose-plan .choose-arrow {
     width: 28px;
     height: 28px;
     aspect-ratio: 1/1;
-    opacity: 1;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .choose-plan:hover .choose-arrow {
-    transform: translate(-355%, 0); /* Di chuyển icon vào giữa */
-    opacity: 1; /* Hiển thị icon khi hover */
+    transform: translate(-350%,0); /* Di chuyển icon vào giữa */
+    opacity: 1; /* Đảm bảo icon luôn hiển thị khi hover */
+}
+
+.choose-plan:hover {
+    color: transparent; /* Ẩn chữ "Get Started" */
+}
+
+.choose-plan p {
+    transition: opacity 0.3s ease;
 }
 
 .choose-plan:hover p {
-    opacity: 0; /* Làm chữ biến mất khi hover */
+    opacity: 0; /* Làm chữ "Get Started" biến mất khi hover */
 }
 
 .subcription-canvas{
@@ -1048,6 +1059,7 @@ div.hero-maincontent{
     justify-content: space-between;
     align-items: flex-start;
     height: 312px;
+    z-index: 1;
 }
 
 .foot-left{
@@ -1086,6 +1098,7 @@ div.hero-maincontent{
     gap: 60px;
     flex-shrink: 0;
     margin: 80px 0 100px 100px;
+    z-index: 1;
 }
 
 .footer-btn{
@@ -1112,7 +1125,7 @@ div.hero-maincontent{
     border: none;
 }
 
-.foot-right.footer-btn button:hover{
+.footer-btn button:hover{
     color: #FFFC43;
 }
 
@@ -1126,6 +1139,7 @@ div.hero-maincontent{
 .footer-bg{
     position: absolute;
     bottom: 0;
+    z-index: 0;
 }
 
 @keyframes slide1 {

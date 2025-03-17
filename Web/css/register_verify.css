@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+html, body{
+    width: 100vw;
+    height: 1080px;
+    background: var(--primary-neutral-950-raisin-black-252525, #252525);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.verify-page{
+    width: 100%;
+    height: 100%;
+    background: var(--primary-neutral-950-raisin-black-252525, #252525);
+    position: relative;
+    z-index: 1;
+}
+
+.verify-main{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    z-index: 1;
+    align-items: center;
+    justify-items: center;
+}
+
+.dimo-logo{
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+}
+
+
+.verify-account h1{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Unbounded";
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%; /* 144px */
+    margin: 0;
+}
+
+.verify-account{
+    gap: 20px;
+    justify-items: center;
+    position: relative;
+    top: 120px;
+}
+
+.verify-form{
+    align-items: center;
+    position: relative;
+    top: 72px;
+    width: 100%;
+    max-width: 645px;
+    height: auto;
+    padding: 40px;
+    gap: 10px;
+    border-radius: 40px;
+    border: 4px solid var(--glass-morphism-stroke-2, rgba(176, 176, 176, 0.80));
+    background: linear-gradient(328deg, rgba(255, 252, 67, 0.72) -116.2%, rgba(122, 122, 122, 0.20) 56.48%);
+    backdrop-filter: blur(20px);
+    box-sizing: border-box; /* Thêm vào đây */
+}
+
+.verify-content{
+    display: flex;
+    width: 100%;
+    max-width: 565px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.verify-title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verify-title h2{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 43.2px */
+    margin: 0;
+}
+
+.verify-title p{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    margin: 0;
+}
+
+.verify-title p span{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Archivo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    margin: 0;
+}
+
+.verify-cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.verify-cell input{
+    display: flex;
+    width: 100%;
+    max-width: 84px;
+    height: 96px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    border-radius: 16px;
+    border: 1px solid var(--glass-morphism-stroke-2, rgba(176, 176, 176, 0.32));
+    background: var(--glass-morphism-1, linear-gradient(92deg, rgba(95, 95, 95, 0.80) 18.14%, rgba(122, 122, 122, 0.20) 81.86%));
+    backdrop-filter: blur(20px);
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 43.2px */
+}
+
+.verify-cell input:focus{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 43.2px */
+}
+
+.verify-cell input::-webkit-inner-spin-button,
+.verify-cell input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#verifyBtn{
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1.6px solid var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    background: transparent;
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+}
+
+#verifyBtn.active {
+    background-color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    color: var(--primary-neutral-950-raisin-black-252525, #252525);
+    cursor: pointer;
+}
+
+.resend-code{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.resend-code p{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 30px */
+    margin: 0;
+}
+
+.resend-code a{
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 30px */
+    margin: 0;
+    text-decoration: none;
+}
+
+.resend-code span{
+    color: var(--accent-semantic-warn-300-golden-fizz-fffc-43, #FFFC43);
+    font-family: "Archivo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    margin: 0;
+}
+
+.login-bg {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;  /* Đặt login-bg nằm ở đáy của phần login-page */
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}

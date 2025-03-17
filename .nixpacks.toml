@@ -1,6 +1,0 @@
-[build]
-  builder = "static"
-  command = "echo 'No build step required for basic HTML/CSS/JS'"
-
-[deployment]
-  server = "static"
