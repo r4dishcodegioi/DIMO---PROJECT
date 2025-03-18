@@ -8,6 +8,7 @@ html, body{
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+    display: flex;
 }
 
 .verify-page{
@@ -179,10 +180,28 @@ html, body{
     line-height: 150%; /* 36px */
 }
 
-#verifyBtn.active {
+#verifyBtn:enabled{
     background-color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
     color: var(--primary-neutral-950-raisin-black-252525, #252525);
     cursor: pointer;
+}
+
+#verifyBtn:disabled {
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1.6px solid var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    background: transparent;
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
 }
 
 .resend-code{
@@ -204,7 +223,7 @@ html, body{
     margin: 0;
 }
 
-.resend-code a{
+.resend-code .re-code{
     color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
     text-align: center;
     font-family: "Archivo";
@@ -216,6 +235,19 @@ html, body{
     text-decoration: none;
 }
 
+.resend-code a{
+    display: none;
+    color: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    text-align: center;
+    font-family: "Archivo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 30px */
+    margin: 0;
+    display: none;
+}
+
 .resend-code span{
     color: var(--accent-semantic-warn-300-golden-fizz-fffc-43, #FFFC43);
     font-family: "Archivo";
@@ -224,6 +256,50 @@ html, body{
     font-weight: 700;
     line-height: 150%;
     margin: 0;
+}
+
+.step2 button{
+    color: var(--primary-neutral-950-raisin-black-252525, #252525);
+    font-family: "Archivo";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--primary-neutral-50-f-6-f-6-f-6, #F6F6F6);
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step2 button img {
+    width: 28px;
+    height: 28px;
+    aspect-ratio: 1/1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.step2 button:hover img{
+    transform: translate(-320%,0); /* Di chuyển icon vào giữa */
+    opacity: 1; /* Đảm bảo icon luôn hiển thị khi hover */
+}
+
+.step2 button:hover {
+    color: transparent; /* Ẩn chữ "Get Started" */
+}
+
+.step2 button span {
+    transition: opacity 0.3s ease;
+}
+
+.step2 button:hover span {
+    opacity: 0; /* Làm chữ "Get Started" biến mất khi hover */
 }
 
 .login-bg {

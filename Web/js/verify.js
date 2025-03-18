@@ -1,67 +1,81 @@
-function moveFocus(event) {
-    const input = event.target;
-    const value = input.value;
+let countdown = 5; 
+const timerElement = document.getElementById('timer');
+const resendLink = document.getElementById('resendLink');
+const verifyBtn = document.getElementById('verifyBtn');
 
-    // Kiểm tra nếu giá trị nhập vào là một chữ số
-    if (!/^\d$/.test(value)) {
-        input.value = ''; // Nếu không phải số, xóa nội dung
-        return;
-    }
+function startCountdown() {
+    const interval = setInterval(() => {
+        countdown--;
+        timerElement.textContent = countdown;
 
-    // Tự động chuyển focus sang ô input tiếp theo
-    let nextInput = input.nextElementSibling;
-    if (nextInput && nextInput.tagName === 'INPUT') {
-        nextInput.focus();
-    }
-}
-
-function moveBack(event) {
-    // Kiểm tra phím nhấn có phải là backspace không
-    if (event.key === 'Backspace') {
-        const input = event.target;
-        const value = input.value;
-
-        // Nếu ô input hiện tại không có giá trị, tự động di chuyển focus về ô trước đó
-        if (value === '') {
-            let prevInput = input.previousElementSibling;
-            if (prevInput && prevInput.tagName === 'INPUT') {
-                prevInput.focus();
-            }
+        if (countdown === 0) {
+            clearInterval(interval);
+            resendLink.style.display = 'inline'; // Allow resend
+            document.getElementById('countdownText').style.display = 'none'; // Hide countdown text
         }
-    }
+    }, 1000);
 }
 
 function moveFocus(event) {
-    const input = event.target;
-    const value = input.value;
+    const currentInput = event.target;
+    const currentInputId = currentInput.id;
+    const nextInput = document.getElementById("otp" + (parseInt(currentInputId.charAt(3)) + 1));
+    const prevInput = document.getElementById("otp" + (parseInt(currentInputId.charAt(3)) - 1));
 
-    // Kiểm tra nếu giá trị nhập vào là một chữ số
-    if (!/^\d$/.test(value)) {
-        input.value = ''; // Nếu không phải số, xóa nội dung
-        return;
-    }
-
-    // Tự động chuyển focus sang ô input tiếp theo
-    let nextInput = input.nextElementSibling;
-    if (nextInput && nextInput.tagName === 'INPUT') {
+    if (currentInput.value !== "" && nextInput) {
         nextInput.focus();
+    } else if (currentInput.value === "" && prevInput) {
+        prevInput.focus();
     }
 }
 
 function checkInput() {
-    const inputs = document.querySelectorAll('.verify-cell input');
-    const verifyButton = document.getElementById('verifyBtn');
-    
-    // Kiểm tra nếu tất cả các ô input đều có giá trị
-    const allFilled = Array.from(inputs).every(input => input.value !== '');
-    
-    // Nếu tất cả các ô đã có giá trị, bật nút verify
-    if (allFilled) {
-        verifyButton.disabled = false;
-        verifyButton.classList.add('active'); // Bật kiểu sáng cho nút
+    const otpValues = [
+        document.getElementById('otp1').value,
+        document.getElementById('otp2').value,
+        document.getElementById('otp3').value,
+        document.getElementById('otp4').value,
+        document.getElementById('otp5').value,
+        document.getElementById('otp6').value
+    ];
+
+    if (otpValues.every(value => value.length === 1)) {
+        verifyBtn.disabled = false; // Enable the verify button
     } else {
-        verifyButton.disabled = true;
-        verifyButton.classList.remove('active'); // Tắt kiểu sáng cho nút
+        verifyBtn.disabled = true; // Disable the verify button
     }
 }
 
+function verifyOtp() {
+    // Here you can verify the OTP using backend logic (like an API call)
+    const otpEntered = [
+        document.getElementById('otp1').value,
+        document.getElementById('otp2').value,
+        document.getElementById('otp3').value,
+        document.getElementById('otp4').value,
+        document.getElementById('otp5').value,
+        document.getElementById('otp6').value
+    ].join('');
+
+    // Assuming the OTP is correct, hide step1 and show step2
+    if (otpEntered === "123456") {  // Example: correct OTP is "123456"
+        document.querySelector('.verify-page.step1').style.display = 'none';
+        document.querySelector('.verify-page.step2').style.display = 'block';
+    } else {
+        alert("Incorrect OTP!");
+    }
+}
+
+function resendOtp() {
+    // Reset countdown and OTP inputs
+    countdown = 5;
+    document.querySelector('.verify-cell input').value = ''; // Reset OTP inputs
+    startCountdown(); // Restart countdown
+}
+
+function goToHomepage() {
+    window.location.href = '/homepage'; // Redirect to homepage or wherever you want
+}
+
+// Initialize countdown on page load
+window.onload = startCountdown;

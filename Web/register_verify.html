@@ -8,7 +8,7 @@
     <script defer src="js/verify.js"></script>
 </head>
 <body>
-    <div class="verify-page">
+    <div class="verify-page step1">
         <div class="verify-main">
             <div class="verify-account">
                 <img src="assets/logo_circle.svg" alt="Dimo Circle" class="dimo-logo">
@@ -19,25 +19,56 @@
                     <div class="verify-title">
                         <h2>Verify your account</h2>
                         <p>
-                            We’ve send a 6-digit code to <span>thynmse182596@fpt.edu.vn</span> <br>
+                            We’ve sent a 6-digit code to <span id="verifyEmail">thynmse182596@fpt.edu.vn</span><br>
                             Please enter the code to complete your account setup.
                         </p>
                     </div>
                     <div class="verify-cell">
-                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
-                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
-                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
-                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
-                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
-                        <input type="number" maxlength="1" oninput="moveFocus(event); checkInput();" onkeydown="moveBack(event)">
+                        <input type="number" maxlength="1" id="otp1" oninput="moveFocus(event); checkInput();">
+                        <input type="number" maxlength="1" id="otp2" oninput="moveFocus(event); checkInput();">
+                        <input type="number" maxlength="1" id="otp3" oninput="moveFocus(event); checkInput();">
+                        <input type="number" maxlength="1" id="otp4" oninput="moveFocus(event); checkInput();">
+                        <input type="number" maxlength="1" id="otp5" oninput="moveFocus(event); checkInput();">
+                        <input type="number" maxlength="1" id="otp6" oninput="moveFocus(event); checkInput();">
                     </div>
-                    <button id="verifyBtn" disabled>Verify</button>
+                    <button class="verifyBtn" id="verifyBtn" disabled onclick="verifyOtp()">Verify</button>
                     <div class="resend-code">
                         <p>Haven’t received a code?</p>
-                        <p class="a">Resend in <span>5</span> seconds</p>
+                        <p id="countdownText" class="re-code">Resend in <span id="timer">5</span> seconds</p>
+                        <a href="#!" id="resendLink" onclick="resendOtp()">Resend</a>
                     </div>
                 </div>
             </div>
+        </div>
         <img src="assets/login_bg.svg" alt="Login BG" class="login-bg">
+    </div>
+    
+    <!-- Step 2: Verification Success -->
+    <div class="verify-page step2" style="display:none;">
+        <div class="verify-main">
+            <div class="verify-account">
+                <img src="assets/logo_circle.svg" alt="Dimo Circle" class="dimo-logo">
+                <h1>Successful</h1>
+            </div>
+            <div class="verify-form">
+                <div class="verify-content">
+                    <div class="verify-title">
+                        <img src="assets/task_alt.svg" alt="Successful" class="successful-ic">
+                    </div>
+                    <div class="verify-title">
+                        <h2>Verification successful</h2>
+                        <p>
+                            Your identity has been verified. Start creating with DIMO.
+                        </p>
+                    </div>
+                    <button onclick="goToHomepage()">
+                        <span>Go to Homepage</span>
+                        <img src="assets/arrow_forward_vector.svg" alt="arrow_forward_vector">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <img src="assets/login_bg.svg" alt="Login BG" class="login-bg">
+    </div>    
 </body>
 </html>

@@ -920,30 +920,6 @@ div.hero-maincontent{
     aspect-ratio: 1/1;
 }
 
-.choose-plan .choose-arrow {
-    width: 28px;
-    height: 28px;
-    aspect-ratio: 1/1;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.choose-plan:hover .choose-arrow {
-    transform: translate(-350%,0); /* Di chuyển icon vào giữa */
-    opacity: 1; /* Đảm bảo icon luôn hiển thị khi hover */
-}
-
-.choose-plan:hover {
-    color: transparent; /* Ẩn chữ "Get Started" */
-}
-
-.choose-plan p {
-    transition: opacity 0.3s ease;
-}
-
-.choose-plan:hover p {
-    opacity: 0; /* Làm chữ "Get Started" biến mất khi hover */
-}
-
 .subcription-canvas{
     display: flex;
     width: 100%;
@@ -1059,7 +1035,6 @@ div.hero-maincontent{
     justify-content: space-between;
     align-items: flex-start;
     height: 312px;
-    z-index: 1;
 }
 
 .foot-left{
@@ -1098,7 +1073,6 @@ div.hero-maincontent{
     gap: 60px;
     flex-shrink: 0;
     margin: 80px 0 100px 100px;
-    z-index: 1;
 }
 
 .footer-btn{
@@ -1125,7 +1099,7 @@ div.hero-maincontent{
     border: none;
 }
 
-.footer-btn button:hover{
+.foot-right.footer-btn button:hover{
     color: #FFFC43;
 }
 
@@ -1139,7 +1113,6 @@ div.hero-maincontent{
 .footer-bg{
     position: absolute;
     bottom: 0;
-    z-index: 0;
 }
 
 @keyframes slide1 {
